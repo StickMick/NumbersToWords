@@ -27,6 +27,15 @@ public class TextOutputTests
     }
 
     [Test]
+    public void ZeroValueReturnsValidOutput()
+    {
+        var result = NumbersToWordsConverter.Convert(decimal.Zero);
+        var expected =
+            "zero dollars and zero cents";
+        Assert.That(result, Is.EqualTo(expected));
+    }
+
+    [Test]
     public void DecimalMaxValueReturnsValidOutput()
     {
         var result = NumbersToWordsConverter.Convert(decimal.MaxValue);
