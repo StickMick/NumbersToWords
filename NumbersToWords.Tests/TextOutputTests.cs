@@ -7,49 +7,52 @@ public class TextOutputTests
     [TestCase(123.45, "one hundred and twenty-three dollars and forty-five cents")]
     public void ProvidedExampleReturnsValidOutput(decimal input, string expected)
     {
-        var result = NumbersToWordsConverter.Convert(input);
+        var structuredOutput = new NumbersToCurrencyWordsStructure(input);
+        var result = structuredOutput.ToString();
         Assert.That(result, Is.EqualTo(expected));
     }
 
     [TestCase(-123.45, "negative one hundred and twenty-three dollars and forty-five cents")]
     public void ProvidedExampleNegativeReturnsValidOutput(decimal input, string expected)
     {
-        var result = NumbersToWordsConverter.Convert(input);
+        var structuredOutput = new NumbersToCurrencyWordsStructure(input);
+        var result = structuredOutput.ToString();
         Assert.That(result, Is.EqualTo(expected));
     }
 
-    [TestCase(123.456789, "negative one hundred and twenty-three dollars and forty-six point cents")]
-    [TestCase(123.454321, "negative one hundred and twenty-three dollars and forty-five point cents")]
+    [TestCase(123.456789, "one hundred and twenty-three dollars and forty-six cents")]
+    [TestCase(123.454321, "one hundred and twenty-three dollars and forty-five cents")]
     public void RoundedValuesReturnsValidOutput(decimal input, string expected)
     {
-        var result = NumbersToWordsConverter.Convert(input);
+        var structuredOutput = new NumbersToCurrencyWordsStructure(input);
+        var result = structuredOutput.ToString();
         Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void ZeroValueReturnsValidOutput()
     {
-        var result = NumbersToWordsConverter.Convert(decimal.Zero);
-        var expected =
-            "zero dollars and zero cents";
+        var structuredOutput = new NumbersToCurrencyWordsStructure(decimal.Zero);
+        var result = structuredOutput.ToString();
+        const string expected = "zero dollars and zero cents";
         Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void DecimalMaxValueReturnsValidOutput()
     {
-        var result = NumbersToWordsConverter.Convert(decimal.MaxValue);
-        var expected =
-            "seventy-nine octillion two hundred twenty-eight septillion one hundred sixty-two sextillion five hundred fourteen quintillion two hundred sixty-four quadrillion three hundred thirty-seven trillion five hundred ninety-three billion five hundred forty-three million nine hundred fifty thousand three hundred thirty-five dollars";
+        var structuredOutput = new NumbersToCurrencyWordsStructure(decimal.MaxValue);
+        var result = structuredOutput.ToString();
+        const string expected = "seventy-nine octillion two hundred and twenty-eight septillion one hundred and sixty-two sextillion five hundred and fourteen quintillion two hundred and sixty-four quadrillion three hundred and thirty-seven trillion five hundred and ninety-three billion five hundred and forty-three million nine hundred and fifty thousand three hundred and thirty-five dollars and zero cents";
         Assert.That(result, Is.EqualTo(expected));
     }
 
     [Test]
     public void DecimalMinValueReturnsValidOutput()
     {
-        var result = NumbersToWordsConverter.Convert(decimal.MinValue);
-        var expected =
-            "negative seventy-nine octillion two hundred twenty-eight septillion one hundred sixty-two sextillion five hundred fourteen quintillion two hundred sixty-four quadrillion three hundred thirty-seven trillion five hundred ninety-three billion five hundred forty-three million nine hundred fifty thousand three hundred thirty-five dollars";
+        var structuredOutput = new NumbersToCurrencyWordsStructure(decimal.MinValue);
+        var result = structuredOutput.ToString();
+        const string expected = "negative seventy-nine octillion two hundred and twenty-eight septillion one hundred and sixty-two sextillion five hundred and fourteen quintillion two hundred and sixty-four quadrillion three hundred and thirty-seven trillion five hundred and ninety-three billion five hundred and forty-three million nine hundred and fifty thousand three hundred and thirty-five dollars and zero cents";
         Assert.That(result, Is.EqualTo(expected));
     }
 }
