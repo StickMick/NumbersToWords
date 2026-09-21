@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="NumbersToWords.Core/NumbersToWords.Core.csproj" />
+  <Project Path="NumbersToWords.Tests/NumbersToWords.Tests.csproj" />
   <Project Path="NumbersToWords/NumbersToWords.Client/NumbersToWords.Client.csproj" />
   <Project Path="NumbersToWords/NumbersToWords/NumbersToWords.csproj" />
 </Solution>
