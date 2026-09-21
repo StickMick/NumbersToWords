@@ -91,15 +91,32 @@ public class NumbersToCurrencyWordsStructure
 
         sb.AppendJoin(" ", dollars);
 
-        sb.Append("dollars and ");
+        if (Hundreds.Value == 1)
+        {
+            sb.Append("dollar and ");
+        }
+        else
+        {
+            sb.Append("dollars and ");
+        }
+
 
         sb.Append(Cents);
+
+        if (Cents.Value == 1)
+        {
+            sb.Append("cent");
+        }
+        else
+        {
+            sb.Append("cents");
+        }
 
         return sb.ToString();
     }
 }
 
-public class Cents(short value) : WordCurrency("cents", value);
+public class Cents(short value) : WordCurrency("", value);
 
 public class Hundreds(short value) : WordCurrency("", value);
 
