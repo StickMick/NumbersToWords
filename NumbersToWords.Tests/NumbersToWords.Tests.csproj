@@ -20,4 +20,8 @@
         <Using Include="NUnit.Framework"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\NumbersToWords.Core\NumbersToWords.Core.csproj" />
+    </ItemGroup>
+
 </Project>
