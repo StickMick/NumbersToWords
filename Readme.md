@@ -1,3 +1,23 @@
+Running the solution:
+
+Dotnet 10
+Chromium based browser (if debugging)
+
+Chosen Approach:
+Stack:
+Using blazor so you don't need to deal with a massive pile of NPM dependencies, just raw c# the whole way down.
+
+Logic:
+I have never grinded leetcode, all my AI integrations are turned off, I'm not looking up any information.
+I could probably make a nice, elegant solution given time...but instead I plan to just have some fun.
+
+I think it would be fun for the UI to give a visual of how the logic is parsing the numbers.
+I made an interpreter/lexer/parser in the past for a particular business requirement. It was fun, and in that I made a visual indicator of how the interpreter was processing the input.
+That was considerably more complex than I imagine this will be, since it would need to evaluate various structures in particular orders...but let's see what I can put together for this.
+
+-----------------
+
+
 Technical Test – Developer Candidates
 Number to Words Web Page
 Please develop a web page featuring a web server routine that accepts a numerical input, converts the
