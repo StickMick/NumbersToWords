@@ -1,7 +1,16 @@
 Running the solution:
 
-Dotnet 10
+# Requirements: 
+Dotnet 10 SDK
 Chromium based browser (if debugging)
+
+# Running this project
+`git clone https://github.com/StickMick/NumbersToWords.git`
+
+`dotnet run --project ./NumbersToWords/NumbersToWords/NumbersToWords.csproj `
+
+# Running Tests
+`dotnet test`
 
 Chosen Approach:
 Stack:
