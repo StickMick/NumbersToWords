@@ -20,4 +20,8 @@
       </Content>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\..\NumbersToWords.Core\NumbersToWords.Core.csproj" />
+    </ItemGroup>
+
 </Project>
