@@ -15,6 +15,7 @@ I think it would be fun for the UI to give a visual of how the logic is parsing 
 I made an interpreter/lexer/parser in the past for a particular business requirement. It was fun, and in that I made a visual indicator of how the interpreter was processing the input.
 That was considerably more complex than I imagine this will be, since it would need to evaluate various structures in particular orders...but let's see what I can put together for this.
 
+![Screenshot_20260922_140018.png](Screenshot_20260922_140018.png)
 -----------------
 
 
